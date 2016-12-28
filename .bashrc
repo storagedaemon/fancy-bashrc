@@ -30,9 +30,8 @@
 #                                                            #
 ##############################################################
 
-UPDATEURL="https://raw.githubusercontent.com/iodine53/Config-Files/master/"
-GIT_URL="https://github.com/iodine53/Config-Files.git"
-AUTHORIZED_KEYS_FILENAME="ssh/authorized_keys"
+UPDATEURL="https://raw.githubusercontent.com/iodine53/fancy-bashrc/master/"
+GIT_URL="https://github.com/iodine53/fancy-bashrc.git"
 
 # Don't check for updates more often than
 # every $MINIMUM_UPDATE_THRESHOLD seconds.
@@ -48,14 +47,6 @@ updatefile ()
     LOCALFILENAME="${2}"
     TEMPFILE=$(mktemp /tmp/tmp.XXXXXX)
     wget --no-check-certificate -qO${TEMPFILE} ${URL} 2>/dev/null && mv ${TEMPFILE} ${LOCALFILENAME}
-}
-
-get_authorized_keys_file ()
-{
-    LOCALFILE="${HOME}/github_authorized_keys"
-    updatefile ${UPDATEURL}${AUTHORIZED_KEYS_FILENAME} ${LOCALFILE} && \
-        echo ${LOCALFILE}: && \
-        cat ${LOCALFILE}
 }
 
 # Download the repo this file comes from.
