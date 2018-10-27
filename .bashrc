@@ -429,4 +429,4 @@ updatebashrc ()
 }
 
 # Make it so, but do the update in the background
-updatebashrc & disown >/dev/null 2>&1
+# updatebashrc & disown >/dev/null 2>&1
